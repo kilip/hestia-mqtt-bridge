@@ -9,13 +9,15 @@ use Illuminate\Console\Command;
 
 class MqttStopCommand extends Command
 {
-    protected $signature = 'mqtt:stop';
+    protected $signature = 'mqtt:stop {--pid-file=}';
 
     protected $description = 'Stop MQTT Client Service';
 
     public function handle()
     {
-        $process = new Server();
+        $pidFile = $this->option('pid-file');
+
+        $process = new Server($pidFile);
         $process->stop();
     }
 }

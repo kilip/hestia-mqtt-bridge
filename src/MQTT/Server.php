@@ -65,8 +65,9 @@ class Server
         if (!$process->isRunning()) {
             throw new \RuntimeException('Unable to start the server process.');
         }
-
         file_put_contents($pidFile, $process->getPid());
+        Log::info('Process ID: '.$process->getPid());
+        Log::info('PIDFile: '.$pidFile);
 
         // stop the web server when the lock file is removed
         while ($process->isRunning()) {

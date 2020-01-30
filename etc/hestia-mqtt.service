@@ -1,0 +1,17 @@
+[Unit]
+Description=Hestia MQTT Client Daemon
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+PIDFile={{pid}}
+Type=forking
+Restart=always
+RestartSec=1
+User=root
+ExecStartPre={{exec_stop}}
+ExecStart={{exec_start}}
+ExecStop={{exec_stop}}
+
+[Install]
+WantedBy=multi-user.target

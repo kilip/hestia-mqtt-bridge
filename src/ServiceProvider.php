@@ -6,6 +6,7 @@ namespace Hestia\MqttGateway;
 use BinSoul\Net\Mqtt\Client\React\ReactMqttClient;
 use BinSoul\Net\Mqtt\Connection;
 use BinSoul\Net\Mqtt\DefaultConnection;
+use Hestia\MqttGateway\Command\MqttInstallServiceCommand;
 use Hestia\MqttGateway\Command\MqttRunCommand;
 use Hestia\MqttGateway\Command\MqttStartCommand;
 use Hestia\MqttGateway\Command\MqttStopCommand;
@@ -71,7 +72,8 @@ class ServiceProvider extends BaseServiceProvider
             $this->commands([
                 MqttStartCommand::class,
                 MqttRunCommand::class,
-                MqttStopCommand::class
+                MqttStopCommand::class,
+                MqttInstallServiceCommand::class,
             ]);
         }
     }

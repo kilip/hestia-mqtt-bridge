@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 class MqttStartCommand extends Command
 {
-    protected $signature = 'mqtt:start';
+    protected $signature = 'mqtt:start {--pid-file=}';
 
     public function handle()
     {
@@ -18,8 +18,9 @@ class MqttStartCommand extends Command
             throw new \Exception('PHP Extension pcntl is not loaded');
         }
 
+        $pidFile = $this->option('pid-file');
         try{
-            $server = new Server();
+            $server = new Server($pidFile);
             $server->start();
         }catch (\Exception $exception){
             Log::error($exception->getMessage());

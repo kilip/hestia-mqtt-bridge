@@ -81,6 +81,7 @@ class Client
             event(Events::MESSAGE_RECEIVED, $message);
         }catch (\Exception $e){
             Log::error('Error while handling topic', [$message->getTopic(), $message->getPayload()]);
+            Log::error('Message: ', [$e->getMessage()]);
         }
     }
 
