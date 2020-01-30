@@ -17,14 +17,15 @@ class CreateCommandMapTable extends Migration
     {
         Schema::create(IRCommandMap::TABLE_NAME, function (Blueprint $table) {
             $table->string('GUID', 36)->primary();
-            $table->string('Device', 36);
+            $table->string('Device', 36)->index('ix_command_device');
+            $table->string('Command');
             $table->string('SubscribedTopic');
+            $table->string('StateTopic');
             $table->string('SendTopic');
             $table->string('Payload');
             $table->timestamps();
 
-            /*
-            $table->foreign('Device')
+            /*$table->foreign('Device')
                 ->references('GUID')
                 ->on(IRDevice::TABLE_NAME)
                 ->onDelete('cascade')

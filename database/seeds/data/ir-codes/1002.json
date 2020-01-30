@@ -12,6 +12,16 @@
             "Data": "0x00FF02FD",
             "DataLSB": "0x00FF40BF",
             "Repeat": 0,
+            "Payload": "on",
+            "Command": "power"
+        },
+        {
+            "Protocol": "NEC",
+            "Bits": 32,
+            "Data": "0x00FF02FD",
+            "DataLSB": "0x00FF40BF",
+            "Repeat": 0,
+            "Payload": "off",
             "Command": "power"
         },
         {
@@ -20,6 +30,16 @@
             "Data": "0x00FF827D",
             "DataLSB": "0x00FF41BE",
             "Repeat": 0,
+            "Payload": "on",
+            "Command": "play"
+        },
+        {
+            "Protocol": "NEC",
+            "Bits": 32,
+            "Data": "0x00FF827D",
+            "DataLSB": "0x00FF41BE",
+            "Repeat": 0,
+            "Payload": "off",
             "Command": "play"
         },
         {

@@ -13,6 +13,8 @@ class IRCommandMap extends AbstractModel
     protected $fillable = [
         'GUID',
         'Device',
+        'Command',
+        'StateTopic',
         'SubscribedTopic',
         'SendTopic',
         'Payload'

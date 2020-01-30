@@ -19,19 +19,21 @@ class PackageSeeder extends Seeder
         $gateway->save();
         $gatewayGUID = $json['GUID'];
 
-        $json = file_get_contents(__DIR__.'/data/devices/ac.json');
-        $json = json_decode($json, true);
-        $json['Gateway'] = $gatewayGUID;
-        $json['CodeDevice'] = 'd440468d-4acd-4a42-b0fa-d93c1c9af985';
+        /* @var \Symfony\Component\Finder\SplFileInfo $file */
+        $finder = Finder::create()->name('*.json');
+        foreach($finder->in(__DIR__.'/data/devices') as $file){
+            $json = file_get_contents($file->getRealPath());
+            $json = json_decode($json, true);
+            $json['Gateway'] = $gatewayGUID;
 
-        unset($json['Commands']);
-        $device = new IRDevice($json);
-        $device->saveOrFail();
+            unset($json['Commands']);
+            $device = new IRDevice($json);
+            $device->saveOrFail();
 
-        $device = IRDevice::find($json['GUID']);
-        $generator = new CommandMapGenerator();
-        $generator->generate($device);
-
+            $device = IRDevice::find($json['GUID']);
+            $generator = new CommandMapGenerator();
+            $generator->generate($device);
+        }
     }
 
     public static function run()

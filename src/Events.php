@@ -11,4 +11,6 @@ class Events
     const CONNECT    = 'hestia.mqtt.ir.event.connect';
 
     const MESSAGE_RECEIVED = 'hestia.mqtt.ir.event.message_received';
+
+    const PUBLISH_DEVICE_STATE = 'hestia.mqtt.ir.event.publish_device_state';
 }

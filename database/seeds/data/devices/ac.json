@@ -1,5 +1,6 @@
 {
     "GUID": "43180f57-938c-4308-bec8-6e0562df7b12",
+    "CodeDevice": "d440468d-4acd-4a42-b0fa-d93c1c9af985",
     "Name": "Main Bedroom AC",
     "CommandTopicPrefix": "mbr/ac"
 }

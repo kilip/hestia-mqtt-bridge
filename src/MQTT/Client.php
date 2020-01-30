@@ -90,16 +90,22 @@ class Client
         $client = $this->client;
         $loop = $this->loop;
 
+        $loop->addPeriodicTimer(10, function(){
+            event(Events::PUBLISH_DEVICE_STATE);
+        });
         $client->on('message',[$this,'onReceivedMessages']);
+
         $client->on('connect', function($ob) use ($client){
             Log::info('connected to {0}',[env('MQTT_HOST')]);
             $client->subscribe(new DefaultSubscription('#'));
+            event(Events::PUBLISH_DEVICE_STATE);
         });
 
         $client->on('open', function () use ($client) {
             // Network connection established
             Log::info(sprintf("Open: %s:%d\n", $client->getHost(), $client->getPort()));
         });
+
         $client->on('error', function (\Exception $e) use ($client, $loop) {
             Log::info(sprintf("Error: %s\n", $e->getMessage()), [$e->getCode()]);
             if(!$client->isConnected() && !$this->shutdown){

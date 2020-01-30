@@ -10,6 +10,7 @@ use Hestia\MqttGateway\Command\MqttInstallServiceCommand;
 use Hestia\MqttGateway\Command\MqttRunCommand;
 use Hestia\MqttGateway\Command\MqttStartCommand;
 use Hestia\MqttGateway\Command\MqttStopCommand;
+use Hestia\MqttGateway\Listeners\MqttStatePublisher;
 use Hestia\MqttGateway\Listeners\MqttTopicListener;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Event;
@@ -61,6 +62,7 @@ class ServiceProvider extends BaseServiceProvider
         });
 
         Event::listen(Events::MESSAGE_RECEIVED, MqttTopicListener::class);
+        Event::listen(Events::PUBLISH_DEVICE_STATE, MqttStatePublisher::class);
     }
 
     public function boot()
