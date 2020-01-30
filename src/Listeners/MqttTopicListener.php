@@ -57,6 +57,13 @@ class MqttTopicListener
         $state->Payload = $payload;
         $state->save();
         Log::info('Saved new state: ',[$stateTopic, $payload]);
+
+        $client = $this->mqttClient;
+        $message = new DefaultMessage(
+            $stateTopic,
+            $payload
+        );
+        $client->publish($message);
     }
 
     private function sendIRCode(IRCommandMap $commandMap)
