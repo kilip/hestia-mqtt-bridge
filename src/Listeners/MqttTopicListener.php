@@ -32,6 +32,7 @@ class MqttTopicListener
         }
 
         $key = $topic.'/'.$payload;
+        $key = strtolower($key);
         $mapped = IRCommandMap::where('SubscribedTopic','=', $key)->first();
         if($mapped instanceof IRCommandMap){
             $this->sendIRCode($mapped);
