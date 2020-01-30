@@ -1,0 +1,55 @@
+{
+    "GUID": "d440468d-4acd-4a42-b0fa-d93c1c9af985",
+    "Name": "LG Hercules 590",
+    "Description": "Split Type Air Conditioner",
+    "Brand": "LG",
+    "Type": "Air Conditioner",
+    "ModelID": "S-09LPBX-R",
+    "CodeType": "tasmota",
+    "Codes": {
+        "mode": {
+            "heat": {"Protocol":"LG","Bits":28,"Data":"0x8810089","DataLSB":"0x10810091","Repeat":0},
+            "ai": {"Protocol":"LG","Bits":28,"Data":"0x880B252","DataLSB":"0x10014D4A","Repeat":0},
+            "dehumidifier": {"Protocol":"LG","Bits":28,"Data":"0x8809946","DataLSB":"0x10019962","Repeat":0},
+            "cool": {"Protocol":"LG","Bits":28,"Data":"0x8808C48","DataLSB":"0x10013112","Repeat":0},
+            "fan_only": {"Protocol":"LG","Bits":28,"Data":"0x880A341","DataLSB":"0x1001C582","Repeat":0}
+        },
+        "power": {
+            "on": {"Protocol":"LG","Bits":28,"Data":"0x8800C40","DataLSB":"0x10013002","Repeat":0},
+            "off": {"Protocol":"LG","Bits":28,"Data":"0x88C0051","DataLSB":"0x1031008A","Repeat":0}
+        },
+        "swing": {
+            "on": {"Protocol":"LG","Bits":28,"Data":"0x8813149","DataLSB":"0x10818C92","Repeat":0},
+            "off": {"Protocol":"LG","Bits":28,"Data":"0x881315A","DataLSB":"0x10818C5A","Repeat":0}
+        },
+        "fan": {
+            "auto":{"Protocol":"LG","Bits":28,"Data":"0x8808F5C","DataLSB":"0x1001F13A","Repeat":0},
+            "low": {"Protocol":"LG","Bits":28,"Data":"0x8808F07","DataLSB":"0x1001F1E0","Repeat":0},
+            "medium": {"Protocol":"LG","Bits":28,"Data":"0x8808F29","DataLSB":"0x1001F194","Repeat":0},
+            "high": {"Protocol":"LG","Bits":28,"Data":"0x8808F4B","DataLSB":"0x1001F1D2","Repeat":0}
+        },
+        "energy_saving": {
+            "on": {"Protocol":"LG","Bits":28,"Data":"0x8810045","DataLSB":"0x108100A2","Repeat":0},
+            "off": {"Protocol":"LG","Bits":28,"Data":"0x8810056","DataLSB":"0x1081006A","Repeat":0}
+        },
+        "autoclean": {
+            "off": {"Protocol":"LG","Bits":28,"Data":"0x88C00C8","DataLSB":"0x10310013","Repeat":0},
+            "on": {"Protocol":"LG","Bits":28,"Data":"0x88C00B7","DataLSB":"0x103100ED","Repeat":0}
+        },
+        "temperature": {
+            "18": {"Protocol":"LG","Bits":28,"Data":"0x880834F","DataLSB":"0x1001C1F2","Repeat":0},
+            "19": {"Protocol":"LG","Bits":28,"Data":"0x8808440","DataLSB":"0x10012102","Repeat":0},
+            "20": {"Protocol":"LG","Bits":28,"Data":"0x8808541","DataLSB":"0x1001A182","Repeat":0},
+            "21": {"Protocol":"LG","Bits":28,"Data":"0x8808642","DataLSB":"0x10016142","Repeat":0},
+            "22": {"Protocol":"LG","Bits":28,"Data":"0x8808743","DataLSB":"0x1001E1C2","Repeat":0},
+            "23": {"Protocol":"LG","Bits":28,"Data":"0x8808844","DataLSB":"0x10011122","Repeat":0},
+            "24": {"Protocol":"LG","Bits":28,"Data":"0x8808945","DataLSB":"0x100191A2","Repeat":0},
+            "25": {"Protocol":"LG","Bits":28,"Data":"0x8808A46","DataLSB":"0x10015162","Repeat":0},
+            "26": {"Protocol":"LG","Bits":28,"Data":"0x8808B47","DataLSB":"0x1001D1E2","Repeat":0},
+            "27": {"Protocol":"LG","Bits":28,"Data":"0x8808C48","DataLSB":"0x10013112","Repeat":0},
+            "28": {"Protocol":"LG","Bits":28,"Data":"0x8808D49","DataLSB":"0x1001B192","Repeat":0},
+            "29": {"Protocol":"LG","Bits":28,"Data":"0x8808E4A","DataLSB":"0x10017152","Repeat":0},
+            "30": {"Protocol":"LG","Bits":28,"Data":"0x8808F4B","DataLSB":"0x1001F1D2","Repeat":0}
+        }
+    }
+}

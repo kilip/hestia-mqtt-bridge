@@ -1,0 +1,50 @@
+{
+    "name": "hestia/mqtt-gateway",
+    "description": "Hestia MQTT Gateway",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anthonius Munthi",
+            "email": "me@itstoni.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Hestia\\MqttGateway\\": "src/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Hestia\\MqttGateway\\":"tests/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.2",
+        "ext-json": "*",
+        "ext-pcntl": "*",
+        "ext-posix": "*",
+        "binsoul/net-mqtt-client-react": "^0.7.1",
+        "illuminate/console": "^6.0|^7.0",
+        "illuminate/container": "^6.0|^7.0",
+        "illuminate/contracts": "^6.0|^7.0",
+        "illuminate/database": "^6.0|^7.0",
+        "illuminate/http": "^6.0|^7.0",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.9",
+        "laravel/framework": "^6.13",
+        "mockery/mockery": "^1.3",
+        "phpunit/phpunit": "^8.5"
+    }
+}

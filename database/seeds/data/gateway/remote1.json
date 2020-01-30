@@ -1,0 +1,7 @@
+{
+    "GUID": "d1adb164-a342-45b3-bd2c-ffa1926b724a",
+    "Name": "Main Bedroom Universal Remote",
+    "AvailableTopic":"remote1/tele/LWT",
+    "SendCodeTopic": "remote1/cmnd/IRSend",
+    "ReceiveCodeTopic": "remote1/stat/RESULT"
+}

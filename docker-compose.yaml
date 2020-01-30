@@ -1,0 +1,10 @@
+version: "3.5"
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: hestia_mosquitto
+    ports:
+      - "1883:1883"
+      - "8883:8883"
+    volumes:
+      - ./etc/mosquitto:/mosquitto/config
