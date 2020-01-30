@@ -61,7 +61,7 @@ class MqttTopicListener
         $client = $this->mqttClient;
         $message = new DefaultMessage(
             $stateTopic,
-            $payload
+            json_encode($payload)
         );
         $client->publish($message);
     }
