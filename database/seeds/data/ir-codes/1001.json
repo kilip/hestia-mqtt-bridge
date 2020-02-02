@@ -22,7 +22,7 @@
             "DataLSB": "0x10014D4A",
             "Repeat": 0,
             "Command": "mode",
-            "Payload": "ai"
+            "Payload": "auto"
         },
         {
             "Protocol": "LG",
@@ -31,7 +31,7 @@
             "DataLSB": "0x10019962",
             "Repeat": 0,
             "Command": "mode",
-            "Payload": "dehumidifier"
+            "Payload": "dry"
         },
         {
             "Protocol": "LG",
@@ -59,6 +59,15 @@
             "Repeat": 0,
             "Command": "power",
             "Payload": "on"
+        },
+        {
+            "Protocol": "LG",
+            "Bits": 28,
+            "Data": "0x88C0051",
+            "DataLSB": "0x1031008A",
+            "Repeat": 0,
+            "Command": "mode",
+            "Payload": "off"
         },
         {
             "Protocol": "LG",

@@ -3,24 +3,14 @@
 
 namespace Hestia\MqttGateway\Listeners;
 
-
 use BinSoul\Net\Mqtt\Client\React\ReactMqttClient;
 use BinSoul\Net\Mqtt\DefaultMessage;
+use Hestia\MqttGateway\Events;
 use Hestia\MqttGateway\Model\IRDeviceState;
 use Illuminate\Support\Facades\Log;
 
 class MqttStatePublisher
 {
-    /**
-     * @var ReactMqttClient
-     */
-    private $mqttClient;
-
-    public function __construct(ReactMqttClient $mqttClient)
-    {
-        $this->mqttClient = $mqttClient;
-    }
-
     public function handle()
     {
         try{
@@ -37,13 +27,8 @@ class MqttStatePublisher
 
     private function publish(IRDeviceState $state)
     {
-        $client = $this->mqttClient;
-
-        $message = new DefaultMessage(
-            $state->getAttribute('StateTopic'),
-            json_encode($state->getAttribute('Payload'))
-        );
-        $client->publish($message);
-        Log::info('Published: '.$state->getAttribute('StateTopic'));
+        $topic = $state->getAttribute('StateTopic').'/tele';
+        $payload = $state->getAttribute('Payload');
+        event(Events::PUBLISH_MESSAGE,[$topic, $payload]);
     }
 }

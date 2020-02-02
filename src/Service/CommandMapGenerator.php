@@ -14,7 +14,7 @@ class CommandMapGenerator
     public function generate(IRDevice $device)
     {
         $prefix = $device->CommandTopicPrefix;
-        $stateTopic = $prefix.'/state';
+        $stateTopic = $prefix;
         $gateway = $device->gateway()->firstOrFail();
         $sendTopic = $gateway->SendCodeTopic;
         $codes = $device->codes();
