@@ -1,0 +1,18 @@
+{
+    "Name": "Aquos TV",
+    "Description":"",
+    "Brand": "Sharp",
+    "Type": "TV",
+    "ModelID": "",
+    "Codes": [
+        {
+            "Protocol":"SHARP",
+            "Bits":15,
+            "Data":"0x41A2",
+            "DataLSB":"0x8245",
+            "Repeat":0
+        },
+        {"Command": "vol-up","Protocol":"SHARP","Bits":15,"Data":"0x40A2","DataLSB":"0x0245","Repeat":0},
+        {"Command":"vol-down","Protocol":"SHARP","Bits":15,"Data":"0x42A2","DataLSB":"0x4245","Repeat":0}
+    ]
+}
